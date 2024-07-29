@@ -1,8 +1,9 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from './components/Login';
-import Home from './components/HomeScreen';
+import Home from './components/Home';
 import Onboarding from './components/Onboarding';
+import Toast from 'react-native-toast-message';
 import ResetPassword from './components/ResetPassword';
 import Otp from './components/Otp';
 import ChangePassword from './components/ChangePassword';
@@ -45,6 +46,7 @@ export default function App() {
         <Stack.Screen name="PersonalInfo" component={PersonalInfo} />
         <Stack.Screen name="Success" component={Success} />
       </Stack.Navigator>
+      <Toast />
     </NavigationContainer>
   );
 }
