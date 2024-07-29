@@ -45,7 +45,7 @@ export default function Login() {
 
           <TouchableOpacity
             className="bg-[#677CE4] py-4 rounded-3xl mt-16"
-            onPress={() => navigation.navigate('Home')}
+            onPress={() => navigation.navigate('TabNavigator')}
           >
             <Text className="text-white text-center">Login</Text>
           </TouchableOpacity>

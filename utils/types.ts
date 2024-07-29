@@ -1,8 +1,9 @@
 import { NavigationProp } from '@react-navigation/native';
+import { SvgProps } from 'react-native-svg';
 
 export type RootStackParamList = {
   Login: undefined;
-  Home: undefined;
+  TabNavigator: undefined;
   ResetPassword: undefined;
   Otp: undefined;
   ChangePassword: undefined;
@@ -11,5 +12,17 @@ export type RootStackParamList = {
   Success: undefined;
   VerifyEmail: undefined;
 };
+
+export type BottomTabParamsList = {
+  Home: undefined;
+  Calendar: undefined;
+  News: undefined;
+  Settings: undefined;
+  QrCode: undefined;
+};
+
+export interface BottomTabProps extends SvgProps {
+  focused?: string;
+}
 
 export type NavigationProps = NavigationProp<RootStackParamList>;

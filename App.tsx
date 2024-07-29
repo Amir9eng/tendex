@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from './components/Login';
-import Home from './components/HomeScreen';
+import TabNavigator from './components/TabNavigator';
 import Onboarding from './components/Onboarding';
 import ResetPassword from './components/ResetPassword';
 import Otp from './components/Otp';
@@ -12,7 +12,7 @@ import Success from './components/Success';
 
 export type RootStackParamList = {
   Login: undefined;
-  Home: undefined;
+  TabNavigator: undefined;
   Onboarding: undefined;
   ResetPassword: undefined;
   Otp: undefined;
@@ -38,7 +38,7 @@ export default function App() {
         <Stack.Screen name="Onboarding" component={Onboarding} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="ResetPassword" component={ResetPassword} />
-        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="TabNavigator" component={TabNavigator} />
         <Stack.Screen name="Otp" component={Otp} />
         <Stack.Screen name="ChangePassword" component={ChangePassword} />
         <Stack.Screen name="Signup" component={Signup} />
