@@ -3,17 +3,19 @@ import React, { Fragment, useState } from 'react';
 import ModalEl from '@/components/ModalEl';
 import InputField from '@/components/input-field';
 import BasicButton from '@/components/BasicButton';
+import Academics from '../icons/Academics';
 
 const SettingsCard = ({ title, texts }: { title: string; texts: string[] }) => {
   return (
     <View className="mb-6">
-      <View className="flex flex-row gap-2">
+      <View className="flex flex-row items-center space-x-2">
+        <Academics />
         <Text className="font-semibold">{title}</Text>
       </View>
       <View className="h-[0.5px] w-full bg-black my-3" />
       <View className="gap-3">
         {texts.map((item) => (
-          <View className="flex flex-row justify-between">
+          <View key={item} className="flex flex-row justify-between">
             <Text className="text-sm font-semibold">{item}</Text>
           </View>
         ))}
@@ -35,9 +37,7 @@ const Settings = () => {
           className="flex flex-row p-3 rounded-xl bg-[#E9ECFB] border-[#BEC7F4] border my-6"
         >
           <View className="flex flex-row items-center flex-1 space-x-1">
-            {/* <View className="w-5"> */}
             <Image source={require('../../assets/smallAvatar.png')} />
-            {/* </View> */}
             <View className="gap-1">
               <Text className="font-bold">Wahab Rahman</Text>
               <Text className="text-[11px] text-[#71719D] font-medium">
@@ -76,7 +76,7 @@ const Settings = () => {
             </ImageBackground>
             <Image
               className="self-center mt-[-50px]"
-              source={require('../../assets/Avatar.png')}
+              source={require('../../assets/avatar.png')}
             />
             <View className="rounded-tr-2xl rounded-tl-2xl p-4 bg-white flex-1">
               <InputField
@@ -87,7 +87,7 @@ const Settings = () => {
               <InputField placeholder="Enter Last Name" label="Last Name" />
               <InputField placeholder="Enter Email" label="Email" />
               {['Birth', 'Gender'].map((item) => (
-                <View className="flex justify-between">
+                <View key={item} className="flex justify-between">
                   <Text className="text-[#9292B4] font-semibold">{item}</Text>
                 </View>
               ))}

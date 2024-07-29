@@ -35,7 +35,7 @@ const News = () => {
           </View>
         </View>
         {articles.map((article) => (
-          <Pressable onPress={() => setSelected(article)}>
+          <Pressable key={article} onPress={() => setSelected(article)}>
             <ArticleTile text={article} />
           </Pressable>
         ))}

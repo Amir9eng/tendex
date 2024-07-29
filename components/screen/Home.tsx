@@ -1,4 +1,4 @@
-import { View, Text, Pressable, Image } from 'react-native';
+import { View, Text, Pressable, Image, ScrollView } from 'react-native';
 import React, { useState } from 'react';
 import PendingIcon from '@/components/icons/PendingIcon';
 import AttendIcon from '@/components/icons/AttendIcon';
@@ -89,6 +89,7 @@ const Home = () => {
       <View className="flex flex-row gap-3 my-5">
         {dates.map((item) => (
           <Pressable
+            key={item}
             onPress={() => setDate(item)}
             className={`rounded-full py-2 px-4 border border-[#B0B0C9] ${
               date === item && 'border-0 bg-[#E9ECFB]'
@@ -98,20 +99,22 @@ const Home = () => {
           </Pressable>
         ))}
       </View>
-      {date === 'Today' && (
-        <View>
-          {today.map((item) => (
-            <ScanCard {...item} />
-          ))}
-        </View>
-      )}
-      {date === 'This Week' && (
-        <View>
-          {thisWeek.map((item) => (
-            <ScanCard {...item} />
-          ))}
-        </View>
-      )}
+      <ScrollView showsVerticalScrollIndicator={false}>
+        {date === 'Today' && (
+          <View>
+            {today.map((item, index) => (
+              <ScanCard key={index} {...item} />
+            ))}
+          </View>
+        )}
+        {date === 'This Week' && (
+          <View>
+            {thisWeek.map((item, index) => (
+              <ScanCard key={index} {...item} />
+            ))}
+          </View>
+        )}
+      </ScrollView>
     </View>
   );
 };

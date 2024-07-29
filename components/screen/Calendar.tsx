@@ -1,14 +1,16 @@
 import { View, Text } from 'react-native';
 import React from 'react';
 
-const CalendarCard = ({
+export const CalendarCard = ({
   bg,
   time,
   title,
+  desc,
 }: {
   bg: string;
   time: string;
   title: string;
+  desc?: string;
 }) => {
   return (
     <View className={`${bg} rounded-xl p-4 flex justify-between mb-3`}>
@@ -16,7 +18,7 @@ const CalendarCard = ({
         <Text className="text-white font-semibold text-[8px]">{time}</Text>
         <Text className="text-white font-semibold text-[12px]">{title}</Text>
         <Text className="text-white font-semibold text-[9px]">
-          Computer Science Lecture Theater
+          {desc || 'Computer Science Lecture Theater'}
         </Text>
       </View>
     </View>
@@ -49,7 +51,7 @@ const Calendar = () => {
           <View className="flex-1 bg-black w-max h-[0.5px]" />
         </View>
         {data.map((item) => (
-          <CalendarCard {...item} />
+          <CalendarCard key={item.title} {...item} />
         ))}
       </View>
     </View>
